@@ -17,21 +17,35 @@ nameInput.addEventListener('input', () => {
 nextBtn.addEventListener('click', () => {
     screen1.classList.add('hidden');
     screen2.classList.remove('hidden');
-    startHearts();
+    startFloatingElements(); // We updated the function name
 });
 
-// Create floating background hearts
-function startHearts() {
-    setInterval(() => {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.innerText = '❤️';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = (Math.random() * 2 + 3) + 's'; 
-        heartsContainer.appendChild(heart);
+// Create floating background elements (hearts, white tulips, white roses)
+function startFloatingElements() {
+    // These are the emojis we will use
+    const elements = ['❤️', '🌷', '🌹']; 
 
+    setInterval(() => {
+        // Create the element
+        const floater = document.createElement('div');
+        floater.classList.add('heart'); // We reuse the 'heart' style for animation
+
+        // Randomly pick which emoji to show
+        const randomIndex = Math.floor(Math.random() * elements.length);
+        floater.innerText = elements[randomIndex];
+        
+        // Randomize the starting horizontal position
+        floater.style.left = Math.random() * 100 + 'vw';
+        
+        // Randomize the duration of the float animation (makes it look natural)
+        floater.style.animationDuration = (Math.random() * 2 + 3) + 's'; 
+        
+        // Add it to the screen
+        heartsContainer.appendChild(floater);
+
+        // Remove the element after the animation finishes
         setTimeout(() => {
-            heart.remove();
+            floater.remove();
         }, 5000);
-    }, 300);
+    }, 350); // Slightly slower interval to avoid overcrowding with complex emojis
 }
