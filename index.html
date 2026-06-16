@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- STEP 1: Name Input Screen -->
+    <div class="card" id="screen1">
+        <h2>Enter your name to open:</h2>
+        <input type="text" id="nameInput" placeholder="Type your name here..." autocomplete="off">
+        <button id="nextBtn" class="hidden">Open It ❤️</button>
+    </div>
+
+    <!-- STEP 2: The Journey Screen -->
+    <div class="card hidden" id="screen2">
+        <h1 class="glow-text">Our Journey ✨</h1>
+        
+        <div class="timeline">
+            <div class="milestone">
+                <h3>The Beginning</h3>
+                <p>Every story has a start, but ours is my absolute favorite choice.</p>
+            </div>
+            
+            <div class="milestone">
+                <h3>6 Months Down</h3>
+                <p>Half a year of incredible memories, laughter, and inside jokes.</p>
+            </div>
+
+            <div class="milestone">
+                <h3>Forever to Go</h3>
+                <p>This is just the opening chapter of our beautiful story together. ❤️</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
